@@ -10,7 +10,7 @@ function page() {
     <div className="px-5">
       <h1 className="pt-50 text-2xl font-bold text-center">Contact us</h1>
 
-      <div className="flex-col md:flex-row justify-center gap-20">
+      <div className="flex flex-col md:flex-row justify-center gap-20">
         <div className="py-10">
           <p>Send us an e-mail</p>
           <div>

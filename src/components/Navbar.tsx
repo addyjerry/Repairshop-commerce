@@ -60,22 +60,22 @@ const Navbar: React.FC<Navtools> = ({ items = defaultNavitems }) => {
             <Image src={logo1} width={200} height={200} alt="logo" />
             <X onClick={handleSidemenu} className="mt-17 text-xl mr-5" />
           </div>
-          <NavigationMenu>
-            <NavigationMenuList>
+          <nav>
+            <ul className='justify-center '>
               {items.map((item, index) => (
-                <NavigationMenuItem key={index}>
-                  <NavigationMenuTrigger>
+                <li key={index}>
+                
                     <Link
                       href={item.href}
-                      className="p-5 text-2xl justify-center"
+                      className="p-5 text-2xl text-center border "
                       onClick={handleSidemenu}
                     >
                       {item.label}
                     </Link>
-                  </NavigationMenuTrigger>
-                </NavigationMenuItem>
+                
+                </li>
               ))}
-            </NavigationMenuList>
+            </ul>
           </NavigationMenu>
         </div>
       )}

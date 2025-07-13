@@ -33,7 +33,7 @@ export default function Footer() {
           <Image src={logo} width={100} height={100} alt="logo" />
         </div>
         <div className="pr-20">
-          <ul className="flex flex-wrap justify-between  text-sm text-white">
+          <ul className="flex flex-wrap justify-between gap-3 text-sm text-white">
             {defaultNavitems.map((item, index) => (
               <Link key={index} href={item.href}>
                 {" "}
