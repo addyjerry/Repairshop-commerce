@@ -52,17 +52,13 @@ const Navbar: React.FC<Navtools> = ({ items = defaultNavitems }) => {
         <div className="inset-0 z-99 bg-white md:hidden w-full h-full flex-col fixed">
           <div className="flex justify-between text-2xl text-center">
             <Image src={logo1} width={200} height={200} alt="logo" />
-            <X onClick={handleSidemenu} className="mt-17 text-xl mr-5" />
+            <X onClick={handleSidemenu} className="mt-14 text-xl mr-5" />
           </div>
           <nav>
-            <ul className="justify-center ">
+            <ul className="place-self-center -mt-5 ">
               {items.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    href={item.href}
-                    className="p-5 text-2xl text-center border border-b-2"
-                    onClick={handleSidemenu}
-                  >
+                <li key={index} className="p-5 text-2xl text-center border-b-2">
+                  <Link href={item.href} onClick={handleSidemenu}>
                     {item.label}
                   </Link>
                 </li>
