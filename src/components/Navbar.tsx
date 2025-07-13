@@ -1,5 +1,16 @@
+"use client";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@radix-ui/react-navigation-menu";
+import { Logs, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import logo1 from "../assets/logo/lo2.png";
+
 interface Navitems {
   label: string;
   href: string;
@@ -26,17 +37,49 @@ const defaultNavitems: Navitems[] = [
   },
 ];
 const Navbar: React.FC<Navtools> = ({ items = defaultNavitems }) => {
+  const [sidemenu, setSidemenu] = useState(false);
+  const handleSidemenu = () => {
+    setSidemenu(!sidemenu);
+  };
   return (
-    <nav>
-      <ul className="flex gap-10 text-xl text-white">
-        {items.map((item, index) => (
-          <Link key={index} href={item.href}>
-            {" "}
-            <li className="hover:cursor-pointer hover:mt-1">{item.label}</li>
-          </Link>
-        ))}
-      </ul>
-    </nav>
+    <>
+      <nav>
+        <ul className="hidden md:flex gap-10 text-xl text-white">
+          {items.map((item, index) => (
+            <Link key={index} href={item.href}>
+              {" "}
+              <li className="hover:cursor-pointer hover:mt-1">{item.label}</li>
+            </Link>
+          ))}
+        </ul>
+        <Logs className="md:hidden" onClick={handleSidemenu} />
+      </nav>
+      {sidemenu && (
+        <div className="inset-0 z-99 bg-white md:hidden w-full h-full flex-col fixed">
+          <div className="flex justify-between text-2xl text-center">
+            <Image src={logo1} width={200} height={200} alt="logo" />
+            <X onClick={handleSidemenu} className="mt-17 text-xl mr-5" />
+          </div>
+          <NavigationMenu>
+            <NavigationMenuList>
+              {items.map((item, index) => (
+                <NavigationMenuItem key={index}>
+                  <NavigationMenuTrigger>
+                    <Link
+                      href={item.href}
+                      className="p-5 text-2xl justify-center"
+                      onClick={handleSidemenu}
+                    >
+                      {item.label}
+                    </Link>
+                  </NavigationMenuTrigger>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      )}
+    </>
   );
 };
 export default Navbar;

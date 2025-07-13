@@ -14,7 +14,7 @@ export default function Searchbar() {
         placeholder="search"
         onChange={handleTextInput}
         value={textInput}
-        className="w-100"
+        className="max-w-100"
       />
     </div>
   );
