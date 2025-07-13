@@ -1,10 +1,4 @@
 "use client";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@radix-ui/react-navigation-menu";
 import { Logs, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,22 +55,20 @@ const Navbar: React.FC<Navtools> = ({ items = defaultNavitems }) => {
             <X onClick={handleSidemenu} className="mt-17 text-xl mr-5" />
           </div>
           <nav>
-            <ul className='justify-center '>
+            <ul className="justify-center ">
               {items.map((item, index) => (
                 <li key={index}>
-                
-                    <Link
-                      href={item.href}
-                      className="p-5 text-2xl text-center border "
-                      onClick={handleSidemenu}
-                    >
-                      {item.label}
-                    </Link>
-                
+                  <Link
+                    href={item.href}
+                    className="p-5 text-2xl text-center border border-b-2"
+                    onClick={handleSidemenu}
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
-          </NavigationMenu>
+          </nav>
         </div>
       )}
     </>
