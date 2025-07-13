@@ -40,7 +40,7 @@ export default function About() {
         <div className="max-w-150 md:pl-5 mt-30">
           <h1 className="text-3xl text-center font-bold">Our products</h1>
           <p className="text-xl p-5">
-            At Adom Repairshop,we also sell electrical products. We don't only
+            At Adom Repairshop,we also sell electrical products. We do not only
             repair, we sell products too. If you need to buy a TV,electric
             fan,electric iron, music box,etc , you can buy from us. We deal in
             all brands of products, Samsung,LG, Skyworth,Philips,etc.You can

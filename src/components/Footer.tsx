@@ -6,9 +6,7 @@ interface Navitems {
   label: string;
   href: string;
 }
-interface Navtools {
-  items?: Navitems[];
-}
+
 const defaultNavitems: Navitems[] = [
   {
     label: "Home",
