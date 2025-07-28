@@ -14,7 +14,7 @@ interface DataType {
 }
 
 async function getData() {
-  return client.fetch<DataType[]>(groq`*[_type=="product"] {
+  return client.fetch<DataType[]>(groq`*[_type=="fanproduct"] {
     _id,
     name,
     price,
@@ -22,7 +22,7 @@ async function getData() {
   }`);
 }
 
-export function CardDemo() {
+export function FanCard() {
   const [posts, setPosts] = useState<DataType[]>([]); // Changed to array
 
   useEffect(() => {

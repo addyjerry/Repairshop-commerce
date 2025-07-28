@@ -1,4 +1,4 @@
-import { CardDemo } from "./CardDemo";
+import { IronCard } from "./IronCards";
 import { Carousel } from "./ui/carousel";
 
 function IronProducts() {
@@ -6,7 +6,7 @@ function IronProducts() {
     <div className="p-10">
       <h1 className="font-semibold">IronProducts</h1>
       <Carousel>
-        <CardDemo />
+        <IronCard />
       </Carousel>
     </div>
   );

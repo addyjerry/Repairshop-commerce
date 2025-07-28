@@ -1,4 +1,4 @@
-import { CardDemo } from "./CardDemo";
+import { SpeakerCard } from "./SpeakerCards";
 import { Carousel } from "./ui/carousel";
 
 function SpeakerProducts() {
@@ -6,7 +6,7 @@ function SpeakerProducts() {
     <div className="p-10">
       <h1 className="font-semibold">SpeakerProducts</h1>
       <Carousel>
-        <CardDemo />
+        <SpeakerCard />
       </Carousel>
     </div>
   );
